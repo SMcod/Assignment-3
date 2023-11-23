@@ -1,0 +1,87 @@
+<%- include ../partials/header.ejs %> <%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1><%= title %></h1>
+
+      <form class="form" method="POST">
+        <div class="form-group">
+          <label for="nameTextField">Exercise name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameTextField"
+            placeholder="Enter the  Title"
+            name="Name"
+            value="<%= Workout.Name %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="weightTextField">weight</label>
+          <input
+            type="text"
+            class="form-control"
+            id="weightTextField"
+            placeholder="Enter the weight in lbs"
+            name="weight"
+            value="<%= Workout.weight %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="setsTextField">Sets</label>
+          <input
+            type="text"
+            class="form-control"
+            id="setsTextField"
+            placeholder="Enter the total sets"
+            name="Sets"
+            value="<%= Workout.sets %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="repsTextField">reps</label>
+          <input
+            type="text"
+            class="form-control"
+            id="repsTextField"
+            placeholder="Enter the reps"
+            name="reps"
+            value="<%= Workout.reps %>"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="timeTextField">time</label>
+          <input
+            type="text"
+            class="form-control"
+            id="timeTextField"
+            placeholder="Enter the time"
+            name="time"
+            value="<%= Workout.time %>"
+            required
+          />
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i> Submit
+        </button>
+
+        <a href="/bio_Workout" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include ../partials/bottom_nav.ejs %> <%- include ../partials/footer.ejs %>

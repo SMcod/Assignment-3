@@ -1,0 +1,29 @@
+<%- include partials/header.ejs%> <%- include partials/main_nav.ejs %>
+<!-- Main Content -->
+<main class="container">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-10">
+      <h1><%= title%></h1>
+      <br />
+      <table class="table table-bordered table-striped table-hover">
+        <tr class="d-flex">
+          <th class="text-center col-2">Name</th>
+          <th class="text-center col-2">Weight</th>
+          <th class="text-center col-1">Sets</th>
+          <th class="text-center col-6">Reps</th>
+          <th class="text-center col-1">Time</th>
+        </tr>
+        <% for (let count=0; count < WorkoutList.length; count ++) { %>
+        <tr class="d-flex">
+          <td class="text-center col-2"><% WorkoutList[count].name</td>
+          <td class="text-center col-2"><% WorkoutList[count].weight</td>
+          <td class="text-center col-1"><% WorkoutList[count].sets</td>
+          <td class="text-center col-6"><% WorkoutList[count].reps</td>
+          <td class="text-center col-1"><% WorkoutList[count].time</td>
+        </tr>
+        <%} %>
+      </table>
+    </div>
+  </div>
+</main>
+<%- include partials/bottom_nav.ejs %> <%- include partials/footer.ejs %>
