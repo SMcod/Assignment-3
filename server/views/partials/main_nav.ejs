@@ -12,7 +12,7 @@
             <% } else { %>
               <a class="nav-link" href="/home">
             <% } %>
-              <i class="fa-solid fa-lg fa-house-laptop"></i> Home</a>
+               <i class="fa-solid fa-lg fa-house-laptop"></i> Home</a>
           </li>
           <li class="nav-item">
             <% if(title == "About Us") { %>
@@ -46,6 +46,17 @@
             <% } %>
               <i class="fa-solid fa-phone-flip"></i> Contact Us</a>
           </li>
+        <% if(typeof displayName =='string' && displayName) { %>
+        <li class="navbar-text">
+          <i class="fas fa-large fa-user"></i>
+          Welcome, <%= displayName %></li>
+          <li class="nav-item">
+          <a  href="/logout" class="nav-link">
+          <i class="fas fa-large sign-out-alt"></i>Logout</a></li>
+          <% } else { %>
+            <a  href="/login" class="nav-link">
+          <i class="fas fa-large sign-in-alt"></i>Login</a></li>
+            <% } %>
         </ul>
       </div>
     </div>

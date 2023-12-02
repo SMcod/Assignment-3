@@ -12,14 +12,20 @@
           <th class="text-center col-1">Sets</th>
           <th class="text-center col-6">Reps</th>
           <th class="text-center col-1">Time</th>
+          <% if(typeof displayName=='string' && displayName) {%>
+          <th class="text-center col-1"></th>
+          <th class="text-center col-1"></th>
+          <% } %>
         </tr>
         <% for (let count=0; count < WorkoutList.length; count ++) { %>
         <tr class="d-flex">
+          <% if(typeof displayName=='string' && displayName) {%>
           <td class="text-center col-2"><% WorkoutList[count].name</td>
           <td class="text-center col-2"><% WorkoutList[count].weight</td>
           <td class="text-center col-1"><% WorkoutList[count].sets</td>
           <td class="text-center col-6"><% WorkoutList[count].reps</td>
           <td class="text-center col-1"><% WorkoutList[count].time</td>
+          <% } %>
         </tr>
         <%} %>
       </table>

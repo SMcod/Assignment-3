@@ -11,6 +11,7 @@ module.exports.DisplayWorkoutlist = async (req, res, next) => {
     res.render("Workout/list", {
       title: "Workout list",
       Workoutlist: Workoutlist,
+      displayName: req.user ? req.user.displayName : "",
     });
   } catch (error) {
     console.error(error);
@@ -25,6 +26,7 @@ module.exports.AddWorkout = (req, res, next) => {
   try {
     res.render("Workout/add", {
       title: "Add Workout",
+      displayName: req.user ? req.user.displayName : "",
     });
   } catch (err) {
     console.error(err);
@@ -61,6 +63,7 @@ module.exports.EditWorkout = async (req, res, next) => {
     res.render("Workout/edit", {
       title: "Edit Workout",
       Workout: WorkoutToEdit,
+      displayName: req.user ? req.user.displayName : "",
     });
   } catch (error) {
     console.error(err);
